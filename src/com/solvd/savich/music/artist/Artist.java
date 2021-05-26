@@ -1,7 +1,5 @@
 package com.solvd.savich.music.artist;
 
-import com.solvd.savich.music.genre.Genre;
-
 public abstract class Artist {
 
     private String name;
@@ -21,9 +19,6 @@ public abstract class Artist {
 
     @Override
     public String toString() {
-        return "Artist{" +
-                "name='" + name + '\'' +
-                ", genre=" + genre +
-                '}';
+        return ("Artist "+"name = '" + name + '\'' + ", genre=" + genre );
     }
 }

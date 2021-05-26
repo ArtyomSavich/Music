@@ -17,4 +17,9 @@ public class Guitar extends Instrument{
     public void sound() {
 
     }
+
+    @Override
+    public void reproduce() {
+
+    }
 }

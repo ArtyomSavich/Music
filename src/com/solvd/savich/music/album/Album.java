@@ -2,7 +2,7 @@ package com.solvd.savich.music.album;
 
 import com.solvd.savich.music.artist.Artist;
 
-public class Album {
+public class Album implements Collection{
 
     private String name;
     private int date;
@@ -29,5 +29,10 @@ public class Album {
 
     public Artist getArtist() {
         return artist;
+    }
+
+    @Override
+    public void reproduce() {
+        System.out.println("Воспроизведение альбома");
     }
 }

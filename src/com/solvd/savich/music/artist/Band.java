@@ -1,7 +1,5 @@
 package com.solvd.savich.music.artist;
 
-import com.solvd.savich.music.genre.Genre;
-
 public class Band extends Artist{
 
    private int numbersOfMembers;

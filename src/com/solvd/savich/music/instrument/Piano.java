@@ -21,4 +21,10 @@ public class Piano extends Instrument{
     public void sound() {
         System.out.println("Sound of Piano " + getNameOfInstrument());
     }
+
+    @Override
+    public void reproduce() {
+        System.out.println("Playing the piano");
+
+    }
 }

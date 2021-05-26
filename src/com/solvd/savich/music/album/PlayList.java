@@ -1,10 +1,8 @@
-package com.solvd.savich.music.playlist;
-
-import com.solvd.savich.music.track.Track;
+package com.solvd.savich.music.album;
 
 import java.util.ArrayList;
 
-public class PlayList {
+public class PlayList implements Collection {
 
     private String name;
     private ArrayList<Track> playList;
@@ -28,5 +26,10 @@ public class PlayList {
 
     public void setPlayList(ArrayList<Track> playList) {
         this.playList = playList;
+    }
+
+    @Override
+    public void reproduce() {
+        System.out.println("Воспроизведение плейлиста");
     }
 }

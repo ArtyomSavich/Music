@@ -1,6 +1,6 @@
-package com.solvd.savich.music.track;
+package com.solvd.savich.music.album;
 
-public class Track {
+public class Track implements Collection{
 
     private String name;
 
@@ -14,5 +14,10 @@ public class Track {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void reproduce() {
+        System.out.println("Воспроизведение трека");
     }
 }
