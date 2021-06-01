@@ -2,7 +2,7 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 
-public abstract class Artist {
+public abstract class Artist { //Add overload method playSong
 
     private String name;
     private Genre genre;
