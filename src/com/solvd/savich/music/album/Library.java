@@ -1,6 +1,6 @@
 package com.solvd.savich.music.album;
 
-public interface Library {
+public interface Library { //Rename Interface
 
      void reproduce();
 
