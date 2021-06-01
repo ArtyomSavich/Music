@@ -3,7 +3,7 @@ package com.solvd.savich.music.album;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class PlayList implements Library {
+public class PlayList implements Library { //Add method addTrack
 
     private String name;
     private ArrayList<Track> playList;
