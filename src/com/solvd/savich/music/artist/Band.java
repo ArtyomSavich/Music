@@ -5,7 +5,7 @@ import com.solvd.savich.music.album.Track;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Band extends Artist{
+public class Band extends Artist{ //Add field ArrayList members
 
     private ArrayList<Singer> members;
     private int numbersOfMembers;
