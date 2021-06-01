@@ -1,5 +1,7 @@
 package com.solvd.savich.music.artist;
 
+import com.solvd.savich.music.album.Track;
+
 public abstract class Artist {
 
     private String name;
@@ -11,6 +13,8 @@ public abstract class Artist {
     }
 
     public abstract void playSong();
+
+    public abstract void playSong(Track track);
 
     public String getName() {
 

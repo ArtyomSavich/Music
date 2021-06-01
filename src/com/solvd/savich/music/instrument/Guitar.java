@@ -1,6 +1,6 @@
 package com.solvd.savich.music.instrument;
 
-public class Guitar extends Instrument{
+public class Guitar extends Instrument implements Tunable{
 
     private int numbersOfString;
 
@@ -19,7 +19,7 @@ public class Guitar extends Instrument{
     }
 
     @Override
-    public void reproduce() {
-
+    public void tune() {
+        System.out.println("Tune guitar");
     }
 }

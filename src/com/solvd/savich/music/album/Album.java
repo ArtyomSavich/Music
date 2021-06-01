@@ -2,17 +2,21 @@ package com.solvd.savich.music.album;
 
 import com.solvd.savich.music.artist.Artist;
 
-public class Album implements Collection{
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Album implements Library {
 
     private String name;
     private int date;
     private Artist artist;
 
-    public Album(String name, int date, Artist artist){
-       this.name = name;
-       this.date = date;
-       this.artist = artist;
+    public Album(String name, int date, Artist artist) {
+        this.name = name;
+        this.date = date;
+        this.artist = artist;
     }
+
     public String getName() {
         return name;
     }
@@ -20,10 +24,12 @@ public class Album implements Collection{
     public void setName(String name) {
         this.name = name;
     }
-    public int getDate(){
+
+    public int getDate() {
         return date;
     }
-    public void setDate(int date){
+
+    public void setDate(int date) {
         this.date = date;
     }
 
@@ -33,6 +39,29 @@ public class Album implements Collection{
 
     @Override
     public void reproduce() {
-        System.out.println("Воспроизведение альбома");
+        System.out.println("Reproduce album");
     }
+
+    public void reproduse(Album album){ System.out.println("Reproduse album - " + album.getName()); }
+
+    @Override
+    public void stop() {
+        System.out.println("Stop album");
+    }
+
+    public void stop(Album album) {
+        System.out.println("Stop album - " + album.getName());
+    }
+
+    @Override
+    public void pause() {
+        System.out.println("Pause album");
+    }
+
+    public void pause(Album album) {
+        System.out.println("Pause album - " + album.getName());
+    }
+
+    @Override
+    public String toString(){return name + artist.toString();}
 }

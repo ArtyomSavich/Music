@@ -1,6 +1,6 @@
 package com.solvd.savich.music.instrument;
 
-public class Piano extends Instrument{
+public class Piano extends Instrument implements Tunable{
 
     private boolean isDigital;
 
@@ -23,8 +23,7 @@ public class Piano extends Instrument{
     }
 
     @Override
-    public void reproduce() {
-        System.out.println("Playing the piano");
-
+    public void tune() {
+        System.out.println("Tune piano");
     }
 }

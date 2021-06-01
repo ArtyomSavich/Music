@@ -1,8 +1,9 @@
 package com.solvd.savich.music.album;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class PlayList implements Collection {
+public class PlayList implements Library {
 
     private String name;
     private ArrayList<Track> playList;
@@ -10,6 +11,10 @@ public class PlayList implements Collection {
     public PlayList(String name, ArrayList<Track> playList) {
         this.name = name;
         this.playList = playList;
+    }
+
+    public void addTrack (Track track){
+        this.playList.add(track);
     }
 
     public String getName() {
@@ -30,6 +35,16 @@ public class PlayList implements Collection {
 
     @Override
     public void reproduce() {
-        System.out.println("Воспроизведение плейлиста");
+        System.out.println("Reproduce playlist");
     }
+
+    @Override
+    public void stop() { System.out.println("Stop playlist"); }
+
+    @Override
+    public void pause() { System.out.println("Pause playlist"); }
+
+    @Override
+    public String toString(){return name +" "+ Arrays.toString(playList.toArray());}
+
 }

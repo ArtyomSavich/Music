@@ -1,6 +1,6 @@
 package com.solvd.savich.music.album;
 
-public class Track implements Collection{
+public class Track implements Library {
 
     private String name;
 
@@ -17,7 +17,20 @@ public class Track implements Collection{
     }
 
     @Override
+    public String toString(){return name;}
+
+    @Override
     public void reproduce() {
-        System.out.println("Воспроизведение трека");
+        System.out.println("Reproduce track");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stop track");
+    }
+
+    @Override
+    public void pause() {
+        System.out.println("Pause track");
     }
 }

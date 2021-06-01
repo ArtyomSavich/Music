@@ -1,8 +1,8 @@
 package com.solvd.savich.music.instrument;
 
-import com.solvd.savich.music.album.Collection;
+import com.solvd.savich.music.album.Library;
 
-public abstract class Instrument implements Collection {
+public abstract class Instrument {
 
     private String nameOfInstrument;
 
