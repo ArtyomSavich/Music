@@ -1,6 +1,6 @@
 package com.solvd.savich.music.album;
 
-public class Track implements Library {
+public class Track implements Library { // Override toString
 
     private String name;
 
