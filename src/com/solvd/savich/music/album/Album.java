@@ -5,13 +5,13 @@ import com.solvd.savich.music.artist.Artist;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Album implements Library {
+public class Album implements Library { //Add overload
 
     private String name;
     private int date;
     private Artist artist;
 
-    public Album(String name, int date, Artist artist) {
+        public Album(String name, int date, Artist artist) {
         this.name = name;
         this.date = date;
         this.artist = artist;
@@ -64,4 +64,5 @@ public class Album implements Library {
 
     @Override
     public String toString(){return name + artist.toString();}
+
 }
