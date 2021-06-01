@@ -2,7 +2,7 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 
-public class Singer extends Artist {
+public class Singer extends Artist { //Add Overload method playSong
 
     private int yearOfBirth;
 
