@@ -1,6 +1,6 @@
 package com.solvd.savich.music.instrument;
 
-public class Piano extends Instrument implements Tunable{
+public class Piano extends Instrument implements Tunable{ //Override method tune
 
     private boolean isDigital;
 
