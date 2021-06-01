@@ -2,7 +2,7 @@ package com.solvd.savich.music.instrument;
 
 import com.solvd.savich.music.album.Library;
 
-public abstract class Instrument {
+public abstract class Instrument { //Add abstract method sound
 
     private String nameOfInstrument;
 
