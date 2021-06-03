@@ -12,9 +12,57 @@ import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.instrument.Piano;
 
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
 
-public class Executor { //Add Polymorphism
+public class Executor { //Create switch and scanner
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
+        String nameType,name;
+        Genre genre;
+        int earthOfBirth;
+        nameType = scanner.nextLine();
+        System.out.println("Please enter name - " );
+        name = scanner.nextLine();
+        System.out.println("Please enter name genre - POPULAR, ROCK, HIP_HOP, ELECTRONIC_MUSIC" );
+        genre = Genre.valueOf(scanner.nextLine());
+        System.out.println("Please enter integer earthOfBirth - " );
+        earthOfBirth = scanner.nextInt();
+                switch (nameType){
+                    case "1":
+                        System.out.println("You created a new name of Singer - " + name );
+                        switch (genre){
+                            case POPULAR:
+                                System.out.println("Added the genre of its performance - " + Genre.POPULAR);
+                                break;
+                            case ROCK:
+                                System.out.println("Added the genre of its performance - " + Genre.ROCK);
+                                break;
+                            case HIP_HOP:
+                                System.out.println("Added the genre of its performance - " + Genre.HIP_HOP);
+                                break;
+                            case ELECTRONIC_MUSIC:
+                                System.out.println("Added the genre of its performance - " + Genre.ELECTRONIC_MUSIC);
+                                break;
+                            default:
+                                System.out.println("Incorrect type of Genre!");
+                        }
+                        System.out.println("You created - " + earthOfBirth );
+                        Artist singer = new Singer(name, genre, earthOfBirth);
+
+                    break;
+                    case "2":
+                        System.out.println("You created a type Band - ");
+                        System.out.println("Add new name - " + name);
+                        Artist band = new Band(name);
+                    break;
+                    default:
+                        System.out.println("Incorrect type of Artist!");
+
+                }
+
+        System.out.println("-----------------");
 
 
         Artist mikeShinoda = new Singer("Mike Shinoda", Genre.ROCK, 1977);
@@ -43,7 +91,7 @@ public class Executor { //Add Polymorphism
         Track cureForTheItch = new Track("Cure for the Itch");
         Track pushingMeAway = new Track("Pushing Me Away");
 
-        Band band = new Band("Linkin Park", Genre.ROCK, 5, artist);
+        Artist band = new Band("Linkin Park", Genre.ROCK, 5, artist);
 
         band.playSong();
         band.playSong(numb);
