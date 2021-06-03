@@ -15,7 +15,9 @@ public class Band extends Artist{ //Add field ArrayList members
         this.numbersOfMembers = numbersOfMembers;
         this.members = members;
     }
-
+public Band(String name){
+        super(name);
+}
     public int getNumbersOfMembers() {
         return numbersOfMembers;
     }
