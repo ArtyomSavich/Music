@@ -8,9 +8,10 @@ public class Singer extends Artist { //Add Overload method playSong
     public Singer(){
 
     }
-public Singer(String name){
+    public Singer(String name){
         super(name);
 }
+
     public Singer(String name, Genre genre, int yearOfBirth) {
         super(name, genre);
         this.yearOfBirth = yearOfBirth;
@@ -28,6 +29,11 @@ public Singer(String name){
     @Override
     public void playSong(Track track) {
         System.out.println("Singer playing "+ track.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Artist name = '" + getName() + '\'' + ", genre = " + getGenre() + ", year of birth - " + yearOfBirth;
     }
 }
 
