@@ -32,10 +32,14 @@ public Band(String name){
     }
 
     @Override
-    public String toString(){return Arrays.toString(members.toArray());}
+    public String toString(){
+        return "Artist name = '" + getName() + '\'' + ", genre = " + getGenre() + ", " +
+                "number of members - " + getNumbersOfMembers() +
+                "\nlist of members" + Arrays.toString(members.toArray());}
 
     @Override
     public void playSong(Track track) {
         System.out.println("Band playing "+ track.getName());
     }
+
 }
