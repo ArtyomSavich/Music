@@ -25,9 +25,12 @@ public abstract class Artist { //Add overload method playSong
 
         return name;
     }
+    public Genre getGenre(){
+        return genre;
+    }
 
     @Override
     public String toString() {
-        return ("Artist "+"name = '" + name + '\'' + ", genre=" + genre );
+        return ("Artist name = '" + name + '\'' + ", genre = " + genre);
     }
 }
