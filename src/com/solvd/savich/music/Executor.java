@@ -11,56 +11,60 @@ import com.solvd.savich.music.instrument.Guitar;
 import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.instrument.Piano;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Executor { //Create switch and scanner
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
-        String nameType,name;
+
+        String nameType, name;
         Genre genre;
-        int earthOfBirth;
+        int earthOfBirth, numbersOfMembers;
+
+
+        System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
         nameType = scanner.nextLine();
-        System.out.println("Please enter name - " );
+        System.out.println("Please enter name");
         name = scanner.nextLine();
-        System.out.println("Please enter name genre - POPULAR, ROCK, HIP_HOP, ELECTRONIC_MUSIC" );
-        genre = Genre.valueOf(scanner.nextLine());
-        System.out.println("Please enter integer earthOfBirth - " );
-        earthOfBirth = scanner.nextInt();
-                switch (nameType){
-                    case "1":
-                        System.out.println("You created a new name of Singer - " + name );
-                        switch (genre){
-                            case POPULAR:
-                                System.out.println("Added the genre of its performance - " + Genre.POPULAR);
-                                break;
-                            case ROCK:
-                                System.out.println("Added the genre of its performance - " + Genre.ROCK);
-                                break;
-                            case HIP_HOP:
-                                System.out.println("Added the genre of its performance - " + Genre.HIP_HOP);
-                                break;
-                            case ELECTRONIC_MUSIC:
-                                System.out.println("Added the genre of its performance - " + Genre.ELECTRONIC_MUSIC);
-                                break;
-                            default:
-                                System.out.println("Incorrect type of Genre!");
-                        }
-                        System.out.println("You created - " + earthOfBirth );
-                        Artist singer = new Singer(name, genre, earthOfBirth);
+        System.out.println("Please enter number of name genre: 0 - POPULAR, 1 - HIP_HOP , 2 - ROCK, 3 - ELECTRONIC_MUSIC");
+        genre = Genre.values()[Integer.parseInt(scanner.nextLine())];
+        System.out.println("Please enter integer earthOfBirth");
+        earthOfBirth = Integer.parseInt(scanner.nextLine());
 
-                    break;
-                    case "2":
-                        System.out.println("You created a type Band - ");
-                        System.out.println("Add new name - " + name);
-                        Artist band = new Band(name);
-                    break;
-                    default:
-                        System.out.println("Incorrect type of Artist!");
+        switch (nameType) {
+            case "1":
+                Artist singer = new Singer(name, genre, earthOfBirth);
+                System.out.println("You created a new Singer - " + singer);
+                break;
 
+            case "2":
+                System.out.println("Please enter integer number of members the Band");
+                numbersOfMembers = Integer.parseInt(scanner.nextLine());
+
+                ArrayList<Singer> members = new ArrayList<>();
+
+                for (int i = 0; i < numbersOfMembers; i++) {
+                    System.out.println("Please enter name of Singer ");
+                    String nameOfSinger = scanner.nextLine();
+                    System.out.println("Please enter number of name genre: 0 - POPULAR, 1 - HIP_HOP , 2 - ROCK, 3 - ELECTRONIC_MUSIC");
+                    Genre genreOfSinger = Genre.values()[Integer.parseInt(scanner.nextLine())];
+                    System.out.println("Please enter year Of Birth Singer");
+                    int yearOfBirthSinger = Integer.parseInt(scanner.nextLine());
+                    members.add(new Singer(nameOfSinger, genreOfSinger, yearOfBirthSinger));
                 }
+
+               Artist band = new Band(name, genre, numbersOfMembers, members);
+               System.out.println(band);
+                break;
+            default:
+                System.out.println("Incorrect type of Artist!");
+
+        }
+
 
         System.out.println("-----------------");
 
@@ -115,7 +119,7 @@ public class Executor { //Create switch and scanner
         System.out.println(myFavorite);
         System.out.println("--------------");
 
-        PlayList myMood = new  PlayList("My mood",new ArrayList<>());
+        PlayList myMood = new PlayList("My mood", new ArrayList<>());
         myMood.addTrack(aPlaceForMyHead);
         myMood.addTrack(forgotten);
         myMood.addTrack(cureForTheItch);
@@ -124,7 +128,7 @@ public class Executor { //Create switch and scanner
         System.out.println(myMood);
         System.out.println("--------------");
 
-        Album hybridTheory = new Album("Hybrid Theory", 2000,band);
+        Album hybridTheory = new Album("Hybrid Theory", 2000, band);
 
         hybridTheory.reproduce();
         hybridTheory.reproduse(hybridTheory);
@@ -136,20 +140,44 @@ public class Executor { //Create switch and scanner
         System.out.println(hybridTheory);
         System.out.println("--------------");
 
-        Guitar guitar = new Guitar("Guitar",4);
+        Guitar guitar = new Guitar("Guitar", 4);
         System.out.println("Name of instrument - " + guitar.getNameOfInstrument());
         System.out.println("Number of string - " + guitar.getNumbersOfString());
         System.out.println("--------------");
 
-        Guitar guitarElectro = new Guitar("Electro guitar",6);
+        Guitar guitarElectro = new Guitar("Electro guitar", 6);
         System.out.println("Name of instrument - " + guitarElectro.getNameOfInstrument());
         System.out.println("Number of string - " + guitarElectro.getNumbersOfString());
         System.out.println("--------------");
         Piano piano = new Piano("Piano", true);
 
 
-
-
     }
+/*
+    private static void enterNameType() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
+                if (!scanner.hasNextInt()){
+            System.out.println("You enter incorrect number of Singer!");
+            enterNameType();
+        } else {
+           int nameType = scanner.nextInt();
+
+        }
+    }
+*/
+  /*  private static void myMain() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите кол-во интервалов: ");
+        if (!sc.hasNextInt()) {
+            System.out.println("Повторите попытку!");
+            myMain();
+        } else {
+            int n = sc.nextInt();
+        }
+    */
 
 }
+
+
