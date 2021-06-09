@@ -23,25 +23,26 @@ public class Executor { //Create switch and scanner
 
         String nameType, name;
         Genre genre;
-        int earthOfBirth, numbersOfMembers;
-
+        int earthOfBirth,  numbersOfMembers;
 
         System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
         nameType = scanner.nextLine();
-        System.out.println("Please enter name");
-        name = scanner.nextLine();
-        System.out.println("Please enter number of name genre: 0 - POPULAR, 1 - HIP_HOP , 2 - ROCK, 3 - ELECTRONIC_MUSIC");
-        genre = Genre.values()[Integer.parseInt(scanner.nextLine())];
-        System.out.println("Please enter integer earthOfBirth");
-        earthOfBirth = Integer.parseInt(scanner.nextLine());
-
-        switch (nameType) {
-            case "1":
+            switch (nameType) {
+              case "1":
+                System.out.println("Please enter name");
+                name = scanner.nextLine();
+                System.out.println("Please enter number of name genre: 0 - POPULAR, 1 - HIP_HOP , 2 - ROCK, 3 - ELECTRONIC_MUSIC");
+                genre = Genre.values()[Integer.parseInt(scanner.nextLine())];
+                System.out.println("Please enter integer earthOfBirth");
+                earthOfBirth = Integer.parseInt(scanner.nextLine());
                 Artist singer = new Singer(name, genre, earthOfBirth);
                 System.out.println("You created a new Singer - " + singer);
                 break;
-
-            case "2":
+              case "2":
+                System.out.println("Please enter name");
+                name = scanner.nextLine();
+                System.out.println("Please enter number of name genre: 0 - POPULAR, 1 - HIP_HOP , 2 - ROCK, 3 - ELECTRONIC_MUSIC");
+                genre = Genre.values()[Integer.parseInt(scanner.nextLine())];
                 System.out.println("Please enter integer number of members the Band");
                 numbersOfMembers = Integer.parseInt(scanner.nextLine());
 
@@ -56,18 +57,15 @@ public class Executor { //Create switch and scanner
                     int yearOfBirthSinger = Integer.parseInt(scanner.nextLine());
                     members.add(new Singer(nameOfSinger, genreOfSinger, yearOfBirthSinger));
                 }
-
-               Artist band = new Band(name, genre, numbersOfMembers, members);
-               System.out.println(band);
+                Artist band = new Band(name, genre, numbersOfMembers, members);
+                System.out.println(band);
                 break;
             default:
                 System.out.println("Incorrect type of Artist!");
-
+                break;
         }
 
-
         System.out.println("-----------------");
-
 
         Artist mikeShinoda = new Singer("Mike Shinoda", Genre.ROCK, 1977);
         Artist bradfordPhillip = new Singer("Bradford Phillip", Genre.ROCK, 1977);
