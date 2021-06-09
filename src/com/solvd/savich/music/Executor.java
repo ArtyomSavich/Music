@@ -11,9 +11,8 @@ import com.solvd.savich.music.instrument.Guitar;
 import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.instrument.Piano;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Executor { //Create switch and scanner
@@ -65,7 +64,7 @@ public class Executor { //Create switch and scanner
                 break;
         }
 
-        System.out.println("-----------------");
+        System.out.println(" *  *  * ");
 
         Artist mikeShinoda = new Singer("Mike Shinoda", Genre.ROCK, 1977);
         Artist bradfordPhillip = new Singer("Bradford Phillip", Genre.ROCK, 1977);
@@ -100,7 +99,7 @@ public class Executor { //Create switch and scanner
         band.playSong(inTheEnd);
         band.playSong(papercut);
 
-        System.out.println("--------------");
+        System.out.println(" *  *  * ");
 
         ArrayList playList = new ArrayList<>();
         playList.add(numb);
@@ -112,22 +111,41 @@ public class Executor { //Create switch and scanner
         playList.add(runaway);
         playList.add(byMyself);
 
-        PlayList myFavorite = new PlayList("My favorite", playList);
-
-        System.out.println(myFavorite);
+        PlayList myFavorite = new PlayList("My favorite list", playList);
+        System.out.println(myFavorite.getName());
         System.out.println("--------------");
+        for (Track track: myFavorite.getPlayList()) {
+            System.out.println(track.getName());
+        }
+        System.out.println(" *  *  * ");
 
-        PlayList myMood = new PlayList("My mood", new ArrayList<>());
-        myMood.addTrack(aPlaceForMyHead);
-        myMood.addTrack(forgotten);
-        myMood.addTrack(cureForTheItch);
-        myMood.addTrack(pushingMeAway);
-
-        System.out.println(myMood);
+        PlayList myMood = new PlayList("My mood list", new ArrayList<>());
+        myMood.setTrack(aPlaceForMyHead);
+        myMood.setTrack(forgotten);
+        myMood.setTrack(cureForTheItch);
+        myMood.setTrack(pushingMeAway);
+        System.out.println(myMood.getName());
         System.out.println("--------------");
+        for (Track track: myMood.getPlayList()) {
+            System.out.println(track.getName());
+        }
+        System.out.println(" *  *  * ");
+
+        PlayList myLove = new PlayList("MyLove", new LinkedList<>());
+        myLove.setTrack(forgotten);
+        myLove.setTrack(crawling);
+        myLove.setTrack(withYou);
+        myLove.setTrack(numb);
+        myLove.setTrack(oneStepCloser);
+        System.out.println(myLove.getName());
+        System.out.println("--------------");
+        for (Track track: myLove.getPlayList()) {
+            System.out.println(track.getName());
+        }
+
+        System.out.println(" *  *  * ");
 
         Album hybridTheory = new Album("Hybrid Theory", 2000, band);
-
         hybridTheory.reproduce();
         hybridTheory.reproduse(hybridTheory);
         hybridTheory.stop();
@@ -136,46 +154,21 @@ public class Executor { //Create switch and scanner
         hybridTheory.pause(hybridTheory);
 
         System.out.println(hybridTheory);
-        System.out.println("--------------");
+        System.out.println(" *  *  * ");
 
         Guitar guitar = new Guitar("Guitar", 4);
         System.out.println("Name of instrument - " + guitar.getNameOfInstrument());
         System.out.println("Number of string - " + guitar.getNumbersOfString());
-        System.out.println("--------------");
+        System.out.println(" *  *  * ");
 
         Guitar guitarElectro = new Guitar("Electro guitar", 6);
         System.out.println("Name of instrument - " + guitarElectro.getNameOfInstrument());
         System.out.println("Number of string - " + guitarElectro.getNumbersOfString());
-        System.out.println("--------------");
+        System.out.println(" *  *  * ");
         Piano piano = new Piano("Piano", true);
 
 
     }
-/*
-    private static void enterNameType() {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter number, what a new type of Artist you want to create: 1 - Singer, 2 - Band ?");
-                if (!scanner.hasNextInt()){
-            System.out.println("You enter incorrect number of Singer!");
-            enterNameType();
-        } else {
-           int nameType = scanner.nextInt();
-
-        }
-    }
-*/
-  /*  private static void myMain() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите кол-во интервалов: ");
-        if (!sc.hasNextInt()) {
-            System.out.println("Повторите попытку!");
-            myMain();
-        } else {
-            int n = sc.nextInt();
-        }
-    */
-
 }
 
 
