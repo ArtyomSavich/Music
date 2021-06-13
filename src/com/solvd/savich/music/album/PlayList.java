@@ -3,11 +3,13 @@ package com.solvd.savich.music.album;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class PlayList implements Library { //Add method addTrack!clea
 
     private String name;
     private List<Track> playList;
+
 
     public PlayList(String name, List<Track> playList) {
         this.name = name;
@@ -34,6 +36,10 @@ public class PlayList implements Library { //Add method addTrack!clea
         this.playList = playList;
     }
 
+    public void removeTrackFromPlayLists (int index){
+        playList.remove(index);
+    }
+
     @Override
     public void reproduce() {
         System.out.println("Reproduce playlist");
@@ -49,22 +55,4 @@ public class PlayList implements Library { //Add method addTrack!clea
     public String toString(){return name +" "+ Arrays.toString(playList.toArray());}
 
 }
-/*
-public class Storage {
 
-    private List<Bird> listOfBirds;
-
-
-    public Storage() {
-        listOfBirds = new ArrayList<>();
-
-    }
-
-    public void setBird(Bird bird) {
-        listOfBirds.add(bird);
-    }
-
-    public List<Bird> getListOfBird() {
-        return listOfBirds;
-    }
-}*/

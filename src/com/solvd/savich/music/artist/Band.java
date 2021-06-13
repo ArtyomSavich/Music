@@ -4,6 +4,7 @@ import com.solvd.savich.music.album.Track;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Band extends Artist{ //Add field ArrayList members
 
@@ -15,7 +16,10 @@ public class Band extends Artist{ //Add field ArrayList members
         this.numbersOfMembers = numbersOfMembers;
         this.members = members;
     }
-public Band(String name){
+    public Band(String name){
+        super(name);
+    }
+    public Band(String name, Genre genre, int numbersOfMembers, List<Artist> artistsFromBase){
         super(name);
 }
     public int getNumbersOfMembers() {

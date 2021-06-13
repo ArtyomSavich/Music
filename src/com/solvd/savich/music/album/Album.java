@@ -2,19 +2,20 @@ package com.solvd.savich.music.album;
 
 import com.solvd.savich.music.artist.Artist;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Set;
 
 public class Album implements Library { //Add overload !
 
     private String name;
     private int date;
-    private Artist artist;
+    private Artist artists;
+    private Set<Track> uniqueTracks;
 
-        public Album(String name, int date, Artist artist) {
+        public Album(String name, int date, Artist artists, Set<Track> uniqueTracks) {
         this.name = name;
         this.date = date;
-        this.artist = artist;
+        this.artists = artists;
+        this.uniqueTracks = uniqueTracks;
     }
 
     public String getName() {
@@ -34,8 +35,16 @@ public class Album implements Library { //Add overload !
     }
 
     public Artist getArtist() {
-        return artist;
+        return artists;
     }
+
+    public void addTrack(Track track){
+        uniqueTracks.add(track);
+     }
+
+    public Set<Track> getOfUniqueTracks(){return uniqueTracks;}
+
+
 
     @Override
     public void reproduce() {
@@ -63,6 +72,6 @@ public class Album implements Library { //Add overload !
     }
 
     @Override
-    public String toString(){return name + artist.toString();}
+    public String toString(){return name + " " +artists.toString();}
 
 }

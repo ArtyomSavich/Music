@@ -17,6 +17,7 @@ public abstract class Artist { //Add overload method playSong
     public Artist(String name){
         this.name = name;
     }
+
     public abstract void playSong();
 
     public abstract void playSong(Track track);
