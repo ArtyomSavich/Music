@@ -72,6 +72,12 @@ public class Album implements Library { //Add overload !
     }
 
     @Override
-    public String toString(){return name + " " +artists.toString();}
-
+    public String toString() {
+        return "Album{" +
+                "name= '" + name + '\'' +
+                ", date=" + date +
+                ", artists=" + artists +
+                ",\nuniqueTracks=" + uniqueTracks +
+                '}';
+    }
 }
