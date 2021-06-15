@@ -2,9 +2,12 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 
+import java.util.List;
+
 public class Singer extends Artist { //Add Overload method playSong
 
     private int yearOfBirth;
+    List<Singer> singers;
     public Singer(){
 
     }
@@ -16,7 +19,6 @@ public class Singer extends Artist { //Add Overload method playSong
         super(name, genre);
         this.yearOfBirth = yearOfBirth;
     }
-
     public int getYearOfBirth() {
         return yearOfBirth;
     }
