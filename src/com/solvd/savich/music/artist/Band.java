@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Band extends Artist{ //Add field ArrayList members
 
-    private ArrayList<Singer> members;
+    private List<Singer> members;
     private int numbersOfMembers;
 
-    public Band(String name, Genre genre, int numbersOfMembers, ArrayList<Singer> members) {
+    public Band(String name, Genre genre, int numbersOfMembers, List<Singer> members) {
         super(name, genre);
         this.numbersOfMembers = numbersOfMembers;
         this.members = members;
@@ -19,9 +19,6 @@ public class Band extends Artist{ //Add field ArrayList members
     public Band(String name){
         super(name);
     }
-    public Band(String name, Genre genre, int numbersOfMembers, List<Artist> artistsFromBase){
-        super(name);
-}
     public int getNumbersOfMembers() {
         return numbersOfMembers;
     }
