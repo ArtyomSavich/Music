@@ -4,7 +4,7 @@ import com.solvd.savich.music.artist.Artist;
 
 import java.util.Set;
 
-public class Album implements Library { //Add overload !
+public class Album implements Library {
 
     private String name;
     private int date;
@@ -80,4 +80,9 @@ public class Album implements Library { //Add overload !
                 ",\nuniqueTracks=" + uniqueTracks +
                 '}';
     }
+
+    /*@Override
+    public int compareTo(Album o) {
+        return this.getName().compareTo(o.getName());
+    }*/
 }
