@@ -2,7 +2,7 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 
-public abstract class Artist { //Add overload method playSong
+public abstract class Artist /*implements Comparable<Artist>*/{
 
     private String name;
     private Genre genre;
@@ -30,6 +30,10 @@ public abstract class Artist { //Add overload method playSong
         return genre;
     }
 
+   /* @Override
+    public int compareTo(Artist o) {
+        return this.getName().compareTo(o.getName());
+    }*/
     @Override
     public String toString() {
         return (" Artist name = '" + name + '\'' + ", genre = " + genre);
