@@ -1,4 +1,4 @@
-package exceptions;
+package com.solvd.savich.music.exceptions;
 
 public class MyExceptions extends Exception{
 
