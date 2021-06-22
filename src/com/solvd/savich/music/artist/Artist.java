@@ -1,6 +1,8 @@
 package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
+import com.solvd.savich.music.instrument.Instrument;
+import exceptions.MyExceptions;
 
 public abstract class Artist /*implements Comparable<Artist>*/{
 
@@ -29,6 +31,8 @@ public abstract class Artist /*implements Comparable<Artist>*/{
     public Genre getGenre(){
         return genre;
     }
+
+    public abstract void playInstruments(Instrument instrument) throws MyExceptions;
 
    /* @Override
     public int compareTo(Artist o) {
