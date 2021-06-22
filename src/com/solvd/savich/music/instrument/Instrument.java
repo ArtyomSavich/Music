@@ -21,7 +21,9 @@ public abstract class Instrument { //Add abstract method sound
         this.nameOfInstrument = nameOfInstrument;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Name of instruments" + nameOfInstrument;
+    }
 }
 
