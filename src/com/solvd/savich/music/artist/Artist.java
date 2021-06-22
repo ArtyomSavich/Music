@@ -2,7 +2,7 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 import com.solvd.savich.music.instrument.Instrument;
-import exceptions.MyExceptions;
+import com.solvd.savich.music.exceptions.MyExceptions;
 
 public abstract class Artist /*implements Comparable<Artist>*/{
 
