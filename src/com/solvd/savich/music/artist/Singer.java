@@ -2,7 +2,6 @@ package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
 import com.solvd.savich.music.instrument.Instrument;
-import exceptions.MyExceptions;
 
 import java.util.List;
 
