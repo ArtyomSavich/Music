@@ -1,6 +1,8 @@
 package com.solvd.savich.music.artist;
 
 import com.solvd.savich.music.album.Track;
+import com.solvd.savich.music.instrument.Instrument;
+import exceptions.MyExceptions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +43,11 @@ public class Band extends Artist{ //Add field ArrayList members
     @Override
     public void playSong(Track track) {
         System.out.println("Band playing "+ track.getName());
+    }
+
+    @Override
+    public void playInstruments(Instrument instrument) throws MyExceptions {
+       throw new MyExceptions("Band " + getName() + " can not play on " + instrument);
     }
 
 
