@@ -1,7 +1,7 @@
 package com.solvd.savich.music;
 
 import com.solvd.savich.music.menu.Menu;
-import exceptions.MyExceptions;
+import com.solvd.savich.music.exceptions.MyExceptions;
 
 
 public class Executor {
