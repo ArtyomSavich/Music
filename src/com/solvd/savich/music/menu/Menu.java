@@ -10,7 +10,7 @@ import com.solvd.savich.music.artist.Singer;
 import com.solvd.savich.music.instrument.Guitar;
 import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.instrument.Piano;
-import exceptions.MyExceptions;
+import com.solvd.savich.music.exceptions.MyExceptions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
