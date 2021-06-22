@@ -26,4 +26,10 @@ public class Piano extends Instrument implements Tunable{ //Override method tune
     public void tune() {
         System.out.println("Tune piano");
     }
+
+    @Override
+    public String toString() {
+        return getNameOfInstrument() + " digital "+ isDigital();
+    }
+
 }
