@@ -189,8 +189,10 @@ public class Menu {
             String string = scanner.nextLine();
             if (string != null && !string.isEmpty()) {
                 return string;
+
+            } else if(string == null){
+                System.out.println("WRONG!!! Try Again, Please enter string not NULL and not empty!");
             }
-            System.out.println("WRONG!!! Try Again, Please enter string not NULL and not empty!");
         }
     }
 
