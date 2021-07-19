@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Properties;
 
 public class Util {
-    public static final String PATH_TO_PROPERTIES = "src/resources/application.properties";
+    public static final String PATH_TO_PROPERTIES = "src/main/resources/application.properties";
 
     public static String getPropertiesValue(String key) {
         Properties properties = new Properties();
