@@ -8,9 +8,10 @@ import org.apache.log4j.Logger;
 
 public class Executor {
 
+    private final static Logger LOGGER = Logger.getLogger(Executor.class);
+
     public static void main(String[] args) {
-        Logger LOGGER = Logger.getLogger(Executor.class);
-        LOGGER.info("Application");
+
         Menu menu = new Menu();
         try {
             menu.showMenu();
@@ -19,7 +20,7 @@ public class Executor {
         }
         String test = Util.getPropertiesValue("PASSWORD");
 
-        System.out.println(test);
+        LOGGER.info(test);
 
         Util.setPropertiesValueWithResources("PASSWORD_1", "SOLVD");
         Util.printAll();
