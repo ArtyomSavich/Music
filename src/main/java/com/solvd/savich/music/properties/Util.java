@@ -1,10 +1,14 @@
 package com.solvd.savich.music.properties;
 
+import com.solvd.savich.music.Executor;
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.Properties;
 
 public class Util {
     public static final String PATH_TO_PROPERTIES = "src/main/resources/application.properties";
+    private final static Logger LOGGER = Logger.getLogger(Util.class);
 
     public static String getPropertiesValue(String key) {
         Properties properties = new Properties();
@@ -12,7 +16,7 @@ public class Util {
             properties.load(fileInputStream);
             return properties.getProperty(key, "default");
         } catch (IOException e) {
-            System.out.println("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
+            LOGGER.error("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
             e.printStackTrace();
         }
         return "default";
@@ -29,7 +33,7 @@ public class Util {
             properties.setProperty(key, value);
             properties.store(fileOutputStream, null);
         } catch (IOException e) {
-            System.out.println("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
+            LOGGER.error("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
             e.printStackTrace();
         } finally {
             if (fileInputStream != null) {
@@ -58,7 +62,7 @@ public class Util {
                 properties.store(fileOutputStream, null);
             }
         } catch (IOException e){
-            System.out.println("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
+            LOGGER.error("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
             e.printStackTrace();
         }
     }
@@ -74,7 +78,7 @@ public class Util {
             }*/
 
         }  catch (IOException e) {
-            System.out.println("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
+            LOGGER.error("Error in the program: file " + PATH_TO_PROPERTIES + " not found");
             e.printStackTrace();
         }
     }
