@@ -1,5 +1,6 @@
 package com.solvd.savich.music.menu;
 
+
 import com.solvd.savich.music.album.Album;
 import com.solvd.savich.music.album.PlayList;
 import com.solvd.savich.music.album.Track;
@@ -11,6 +12,7 @@ import com.solvd.savich.music.instrument.Guitar;
 import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.instrument.Piano;
 import com.solvd.savich.music.exceptions.MyExceptions;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,6 +22,8 @@ import java.util.*;
 public class Menu {
 
     public enum Docs {EMPTY, NAME, WRONG_INPUT, NOT_A_NUMBER, MATCH, WRONG_TYPE, MEMBERS, GENRE, DATE_OF_BIRTH;}
+
+    private final static Logger LOGGER = Logger.getLogger(Menu.class);
 
     public void showMenu() throws MyExceptions {
         Scanner scanner = new Scanner(System.in);
@@ -34,10 +38,10 @@ public class Menu {
             try {
                 option = getOption(scanner);
             } catch (MyExceptions myExceptions) {
-                System.out.println(myExceptions.getMessage());
+                LOGGER.error(myExceptions.getMessage());
                 continue;
             } catch (NumberFormatException n){
-                System.out.println("You enter not a number!!!");
+                LOGGER.error("You enter not a number!!!", n);
                 continue;
             }
             switch (option) {
@@ -99,8 +103,8 @@ public class Menu {
     private void printAllArtists(Map<Artist, List<Album>> allArtists) {
 
         for (Artist artist : allArtists.keySet()) {
-            System.out.println(artist.getName());
-            System.out.println(allArtists.get(artist));
+            LOGGER.info(artist.getName());
+            LOGGER.info(allArtists.get(artist));
         }
     }
 
@@ -164,7 +168,7 @@ public class Menu {
         genre = Genre.values()[Integer.parseInt(getValidStringFromConsole(scanner))];
         printDoc(Menu.Docs.DATE_OF_BIRTH);
         dateOfBirth = Integer.parseInt(getValidStringFromConsole(scanner));
-        System.out.println("You selected option - " + nameType);
+        LOGGER.info("You selected option - " + nameType);
         switch (nameType) {
             case 1:
                 Artist singer = new Singer(name, genre, dateOfBirth);
@@ -191,7 +195,7 @@ public class Menu {
                 return string;
 
             } else if(string == null){
-                System.out.println("WRONG!!! Try Again, Please enter string not NULL and not empty!");
+                LOGGER.info("WRONG!!! Try Again, Please enter string not NULL and not empty!");
             }
         }
     }
@@ -202,14 +206,13 @@ public class Menu {
         try {
             s = reader.readLine();
         } catch (IOException e){
-            System.out.println(e.getMessage());
+            LOGGER.error(e.getMessage());
         } finally {
             try{
                 reader.close();
             } catch (IOException e){
-                System.out.println(e.getMessage());
+                LOGGER.error(e.getMessage());
             }
-
         } if ("".equals(s)){
             throw new MyExceptions("String can not be empty!");
         }
@@ -327,7 +330,7 @@ public class Menu {
         try{
             artist.playInstruments(instrument);
         } catch (MyExceptions myExceptions) {
-            System.out.println(myExceptions.getMessage());
+            LOGGER.error(myExceptions.getMessage());
         }
     }
 
