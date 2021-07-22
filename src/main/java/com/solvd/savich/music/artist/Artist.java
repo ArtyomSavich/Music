@@ -4,7 +4,7 @@ import com.solvd.savich.music.album.Track;
 import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.exceptions.MyExceptions;
 
-public abstract class Artist /*implements Comparable<Artist>*/{
+public abstract class Artist {
 
     private String name;
     private Genre genre;
