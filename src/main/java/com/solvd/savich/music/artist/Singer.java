@@ -5,10 +5,11 @@ import com.solvd.savich.music.instrument.Instrument;
 
 import java.util.List;
 
-public class Singer extends Artist { //Add Overload method playSong
+public class Singer extends Artist {
 
     private int yearOfBirth;
     List<Singer> singers;
+
     public Singer(){
 
     }
