@@ -7,7 +7,7 @@ import com.solvd.savich.music.exceptions.MyExceptions;
 import java.util.Arrays;
 import java.util.List;
 
-public class Band extends Artist{ //Add field ArrayList members
+public class Band extends Artist{
 
     private List<Singer> members;
     private int numbersOfMembers;
