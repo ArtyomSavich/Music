@@ -2,21 +2,25 @@ package com.solvd.savich.music.album;
 
 import com.solvd.savich.music.artist.Artist;
 
+import java.util.List;
 import java.util.Set;
 
 public class Album implements Library {
 
+    private int album_id;
     private String name;
     private int date;
     private Artist artists;
-    private Set<Track> uniqueTracks;
+    private List<Track> uniqueTracks;
 
-        public Album(String name, int date, Artist artists, Set<Track> uniqueTracks) {
+        public Album(int album_id, String name, int date, Artist artists, List<Track> uniqueTracks) {
+        this.album_id = album_id;
         this.name = name;
         this.date = date;
         this.artists = artists;
         this.uniqueTracks = uniqueTracks;
     }
+
 
     public String getName() {
         return name;
@@ -42,7 +46,7 @@ public class Album implements Library {
         uniqueTracks.add(track);
      }
 
-    public Set<Track> getOfUniqueTracks(){return uniqueTracks;}
+    public List<Track> getOfUniqueTracks(){return uniqueTracks;}
 
 
 
@@ -73,12 +77,7 @@ public class Album implements Library {
 
     @Override
     public String toString() {
-        return "Album{" +
-                "name= '" + name + '\'' +
-                ", date=" + date +
-                ", artists=" + artists +
-                ",\nuniqueTracks=" + uniqueTracks +
-                '}';
+        return  album_id + name + date + artists + uniqueTracks + "\n";
     }
 
     /*@Override

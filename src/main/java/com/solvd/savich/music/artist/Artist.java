@@ -5,32 +5,27 @@ import com.solvd.savich.music.instrument.Instrument;
 import com.solvd.savich.music.exceptions.MyExceptions;
 
 public abstract class Artist {
-
-    private String name;
+    private int artist_id;
     private Genre genre;
 
-    public Artist(String name, Genre genre){
-        this.name = name;
-        this.genre = genre;
-    }
+
+
     public Artist(){
 
     }
-    public Artist(String name){
-        this.name = name;
+
+    public Artist(int artist_id, Genre genre){
+        this.artist_id = artist_id;
+        this.genre = genre;
     }
+
 
     public abstract void playSong();
 
     public abstract void playSong(Track track);
 
-    public String getName() {
 
-        return name;
-    }
-    public Genre getGenre(){
-        return genre;
-    }
+
 
     public abstract void playInstruments(Instrument instrument) throws MyExceptions;
 
@@ -40,6 +35,22 @@ public abstract class Artist {
     }*/
     @Override
     public String toString() {
-        return (" Artist name = '" + name + '\'' + ", genre = " + genre);
+        return "\n"+ " artist_id = '" + artist_id + '\'' + ", genre = " + genre;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public int getArtist_id() {
+        return artist_id;
+    }
+
+    public void setArtist_id(int artist_id) {
+        this.artist_id = artist_id;
     }
 }
